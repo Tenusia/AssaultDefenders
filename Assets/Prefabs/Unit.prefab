@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 4277664861384890145}
   - component: {fileID: 5012719625381139906}
   - component: {fileID: 3896447491124379591}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Unit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,6 +153,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
+  health: {fileID: 5012719625381139906}
   unitMovement: {fileID: 68232991930540470}
   targeter: {fileID: 5137149245065616836}
   onSelected:
@@ -185,7 +186,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  health: {fileID: 5012719625381139906}
 --- !u!65 &2666973523004230158
 BoxCollider:
   m_ObjectHideFlags: 0

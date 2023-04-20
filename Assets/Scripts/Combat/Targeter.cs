@@ -6,13 +6,23 @@ using UnityEngine;
 public class Targeter : NetworkBehaviour
 {
     private Targetable target;
+    
+    #region Server
 
     public Targetable GetTarget()
     {
         return target;
     }
-    
-    #region Server
+
+    public override void OnStartServer()
+    {
+        GameOverHandler.ServerOnGameOver += ServerHandleGameOver;
+    }
+
+    public override void OnStopServer()
+    {
+        GameOverHandler.ServerOnGameOver -= ServerHandleGameOver;
+    }
 
     [Command]
     public void CmdSetTarget(GameObject targetGameObject)
@@ -28,10 +38,11 @@ public class Targeter : NetworkBehaviour
         target = null;
     }
 
-
-    #endregion
-
-    #region Client
+    [Server]
+    private void ServerHandleGameOver()
+    {
+        ClearTarget();
+    }
 
     #endregion
 }
