@@ -63,9 +63,11 @@ MonoBehaviour:
   playerSpawnMethod: 1
   spawnPrefabs:
   - {fileID: 2370826445253836126, guid: 2e12a1782cd84504cb59a4d167fa23f0, type: 3}
-  - {fileID: 9108140109601799753, guid: 9dd7212bf3c66124f82dfea9d53a1c39, type: 3}
+  - {fileID: 6482318385516269632, guid: c27055d3069901643bd3d9eda9c6cb34, type: 3}
   - {fileID: 5140932782093735743, guid: a9512c456874ccf47b19c96db40251fd, type: 3}
   - {fileID: 8286854307124308691, guid: 961531d8b60c65c459203368e2e697f1, type: 3}
+  - {fileID: 6482318385516269632, guid: b6b69fc5deeafd84e8af715c6ead498a, type: 3}
+  - {fileID: 6482318385516269632, guid: 95fb6036db5f0104eb446fc89100e97b, type: 3}
   snapshotSettings:
     bufferTimeMultiplier: 2
     catchupNegativeThreshold: -1
@@ -77,7 +79,7 @@ MonoBehaviour:
     dynamicAdjustmentTolerance: 1
     deliveryTimeEmaDuration: 2
   timeInterpolationGui: 0
-  unitSpawnerPrefab: {fileID: 9108140109601799753, guid: 9dd7212bf3c66124f82dfea9d53a1c39,
+  unitSpawnerPrefab: {fileID: 6482318385516269632, guid: c27055d3069901643bd3d9eda9c6cb34,
     type: 3}
   gameOverHandlerPrefab: {fileID: 2786489670011379621, guid: 961531d8b60c65c459203368e2e697f1,
     type: 3}
