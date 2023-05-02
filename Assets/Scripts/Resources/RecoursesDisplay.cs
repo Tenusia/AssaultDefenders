@@ -12,13 +12,12 @@ public class RecoursesDisplay : MonoBehaviour
     
     private void Update() 
     {
-        if(player == null)
+        if (player == null)
         {
             StartCoroutine(DelayPlayerGet()); 
 
             if(player != null)
             {
-                Debug.Log("player is found");
                 ClientHandleResourcesUpdated(player.GetResources());
                 
                 player.ClientOnResourcesUpdated += ClientHandleResourcesUpdated;
@@ -28,7 +27,7 @@ public class RecoursesDisplay : MonoBehaviour
 
     IEnumerator DelayPlayerGet()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         player = NetworkClient.connection.identity.GetComponent<RTSPlayer>(); 
     }
 
