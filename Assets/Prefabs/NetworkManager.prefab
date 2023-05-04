@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8186503134826041416}
   - component: {fileID: 8186503134826041418}
   - component: {fileID: 8186503134826041422}
-  - component: {fileID: 8186503134826041417}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -62,12 +61,18 @@ MonoBehaviour:
   autoCreatePlayer: 1
   playerSpawnMethod: 1
   spawnPrefabs:
-  - {fileID: 2370826445253836126, guid: 2e12a1782cd84504cb59a4d167fa23f0, type: 3}
   - {fileID: 6482318385516269632, guid: c27055d3069901643bd3d9eda9c6cb34, type: 3}
-  - {fileID: 5140932782093735743, guid: a9512c456874ccf47b19c96db40251fd, type: 3}
   - {fileID: 8286854307124308691, guid: 961531d8b60c65c459203368e2e697f1, type: 3}
-  - {fileID: 6482318385516269632, guid: b6b69fc5deeafd84e8af715c6ead498a, type: 3}
   - {fileID: 6482318385516269632, guid: 95fb6036db5f0104eb446fc89100e97b, type: 3}
+  - {fileID: 2843975409711352667, guid: b10c77dc1f84b344ca3246bc52d57710, type: 3}
+  - {fileID: 1829869643006350580, guid: f4dafe2d536f99b468ae11d5dc34f896, type: 3}
+  - {fileID: 6298576077249874938, guid: 41ee75a33b2dd8f4f8775b02e0928d16, type: 3}
+  - {fileID: 9035106597635613551, guid: 75dc38034a26eb54b9c931d759db49db, type: 3}
+  - {fileID: 2908924234197519594, guid: e2af06e1e04ec494380b619c6f15e3e7, type: 3}
+  - {fileID: 3127931511010649942, guid: 40b56369074e5024ab901d2f5f633218, type: 3}
+  - {fileID: 656974884251747659, guid: ced255e57ec5ecc48a155c919bc6c02f, type: 3}
+  - {fileID: 8046717483385072267, guid: 97352460aab65074e87779eb7f9d1d88, type: 3}
+  - {fileID: 5106422121551588036, guid: 2eb31a326d67308459ea58b06a12c88a, type: 3}
   snapshotSettings:
     bufferTimeMultiplier: 2
     catchupNegativeThreshold: -1
@@ -107,17 +112,3 @@ MonoBehaviour:
   clientMaxReceivesPerTick: 1000
   clientSendQueueLimit: 10000
   clientReceiveQueueLimit: 10000
---- !u!114 &8186503134826041417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8186503134826041420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offsetX: 0
-  offsetY: 0

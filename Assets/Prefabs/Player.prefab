@@ -67,11 +67,14 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
+  cameraTransform: {fileID: 8927929522148614229}
   buildingBlockLayer:
     serializedVersion: 2
     m_Bits: 1281
   buildings:
-  - {fileID: 6482318385516269633, guid: b6b69fc5deeafd84e8af715c6ead498a, type: 3}
+  - {fileID: 1829869643006350581, guid: f4dafe2d536f99b468ae11d5dc34f896, type: 3}
+  - {fileID: 2908924234197519595, guid: e2af06e1e04ec494380b619c6f15e3e7, type: 3}
+  - {fileID: 8046717483385072266, guid: 97352460aab65074e87779eb7f9d1d88, type: 3}
   - {fileID: 6482318385516269633, guid: 95fb6036db5f0104eb446fc89100e97b, type: 3}
   buildingRangeLimit: 5
   resources: 500
