@@ -44,7 +44,7 @@ public class Health : NetworkBehaviour
         currentHealth = Mathf.Max(currentHealth - damageAmount, 0);
 
         if(currentHealth != 0) {return;}
-
+        Debug.Log("You died server");
         ServerOnDie?.Invoke();
     }
 

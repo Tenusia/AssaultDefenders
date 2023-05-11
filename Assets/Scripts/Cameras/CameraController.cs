@@ -17,6 +17,8 @@ public class CameraController : NetworkBehaviour
 
     private Controls controls;
 
+    #region Server
+
     public override void OnStartAuthority()
     {
         playerCameraTransform.gameObject.SetActive(true);
@@ -81,4 +83,25 @@ public class CameraController : NetworkBehaviour
     {
         previousInput = ctx.ReadValue<Vector2>();
     }
+
+    #endregion
+
+    #region Client
+
+    public override void OnStartClient()
+    {
+        UnitBase.ClientOnBaseSpawned += ClientHandleBaseSpawned;
+    }
+
+    public override void OnStopClient()
+    {
+        UnitBase.ClientOnBaseSpawned -= ClientHandleBaseSpawned;
+    }
+
+    private void ClientHandleBaseSpawned(UnitBase unitBase)
+    {
+        playerCameraTransform.position = new Vector3(unitBase.transform.position.x, playerCameraTransform.position.y, playerCameraTransform.position.z);
+    }
+
+    #endregion
 }

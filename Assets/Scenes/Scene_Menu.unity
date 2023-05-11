@@ -1452,7 +1452,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 519364954}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1147412118}
+        m_TargetAssemblyTypeName: LobbyMenu, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &519364954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2316,6 +2328,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lobbyUI: {fileID: 1432990674}
+  startGameButton: {fileID: 519364953}
+  playerNameTexts:
+  - {fileID: 1753863226}
+  - {fileID: 134517543}
+  - {fileID: 929519975}
+  - {fileID: 1063729344}
 --- !u!1 &1177957124
 GameObject:
   m_ObjectHideFlags: 0
@@ -3853,11 +3871,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8186503134826041418, guid: 1478887a2ddca3a4f968c3b713b0c458,
-        type: 3}
-      propertyPath: onlineScene
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8186503134826041420, guid: 1478887a2ddca3a4f968c3b713b0c458,
         type: 3}

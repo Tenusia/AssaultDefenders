@@ -76,8 +76,7 @@ MonoBehaviour:
   - {fileID: 2908924234197519595, guid: e2af06e1e04ec494380b619c6f15e3e7, type: 3}
   - {fileID: 8046717483385072266, guid: 97352460aab65074e87779eb7f9d1d88, type: 3}
   - {fileID: 6482318385516269633, guid: 95fb6036db5f0104eb446fc89100e97b, type: 3}
-  buildingRangeLimit: 5
-  resources: 500
+  buildingRangeLimit: 10
 --- !u!114 &1485327679764556238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,8 +93,8 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   playerCameraTransform: {fileID: 8927929522148614229}
-  speed: 20
-  screenBorderThickness: 10
+  speed: 18
+  screenBorderThickness: 5
   screenXLimits: {x: -45, y: 45}
   screenZLimits: {x: -55, y: 35}
 --- !u!1 &2072770019659341049
@@ -166,7 +165,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5451357480524999854}
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalRotation: {x: 0.46174863, y: 0, z: 0, w: 0.8870109}
   m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -174,7 +173,7 @@ Transform:
   - {fileID: 496908221308372103}
   m_Father: {fileID: 1830579822799142570}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 55, y: 0, z: 0}
 --- !u!114 &5427954313950691081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +195,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 80
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000

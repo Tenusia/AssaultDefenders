@@ -13,6 +13,7 @@ public class Minimap : MonoBehaviour, IPointerDownHandler, IDragHandler
 
     private Transform playerCameraTransform;
 
+    [ClientCallback]
     private void Update() 
     {
         if(playerCameraTransform != null) {return;}

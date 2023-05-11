@@ -53,6 +53,7 @@ public class Unit : NetworkBehaviour
     private void ServerHandleDie()
     {
         NetworkServer.Destroy(gameObject);
+        Debug.Log("Destroyed unit on server");
     }
 
     #endregion

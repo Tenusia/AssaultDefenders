@@ -10,25 +10,13 @@ public class RecoursesDisplay : MonoBehaviour
 
     private RTSPlayer player;
     
-    private void Update() 
+    private void Start() 
     {
-        if (player == null)
-        {
-            StartCoroutine(DelayPlayerGet()); 
+        player = NetworkClient.connection.identity.GetComponent<RTSPlayer>();  
 
-            if(player != null)
-            {
-                ClientHandleResourcesUpdated(player.GetResources());
+        ClientHandleResourcesUpdated(player.GetResources());
                 
-                player.ClientOnResourcesUpdated += ClientHandleResourcesUpdated;
-            }
-        }
-    }
-
-    IEnumerator DelayPlayerGet()
-    {
-        yield return new WaitForSeconds(0.5f);
-        player = NetworkClient.connection.identity.GetComponent<RTSPlayer>(); 
+        player.ClientOnResourcesUpdated += ClientHandleResourcesUpdated;  
     }
 
     private void OnDestroy() 

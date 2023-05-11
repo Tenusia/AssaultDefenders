@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
@@ -14,6 +15,8 @@ public class BuildingButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     [SerializeField] private TMP_Text priceText = null;
     [SerializeField] private LayerMask floorMask = new LayerMask();
 
+    public static event Action<bool> TryingToPlaceBuilding;
+
     private Camera mainCamera;
     private BoxCollider buildingCollider;
     private RTSPlayer player;
@@ -27,30 +30,23 @@ public class BuildingButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         iconImage.sprite = building.GetIcon();
         priceText.text = building.GetPrice().ToString();
 
+        player = NetworkClient.connection.identity.GetComponent<RTSPlayer>();
+
         buildingCollider = building.GetComponent<BoxCollider>();
     }
     
     private void Update() 
     {
-        if(player == null)
-        {
-            StartCoroutine(DelayPlayerGet());     
-        }
-
         if(buildingPreviewInstance == null) {return;}
 
         UpdateBuildingPreview();
-    }
-    
-    IEnumerator DelayPlayerGet()
-    {
-        yield return new WaitForSeconds(0.5f);
-        player = NetworkClient.connection.identity.GetComponent<RTSPlayer>(); 
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         if(eventData.button != PointerEventData.InputButton.Left) {return;}
+
+        TryingToPlaceBuilding?.Invoke(true);
 
         if(player.GetResources() < building.GetPrice()) {return;}
         
@@ -63,6 +59,8 @@ public class BuildingButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public void OnPointerUp(PointerEventData eventData)
     {
         if(buildingPreviewInstance == null) {return;}
+
+        TryingToPlaceBuilding?.Invoke(false);
 
         Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
 

@@ -17,45 +17,43 @@ public class UnitSelectionHandler : MonoBehaviour
 
     public List<Unit> SelectedUnits {get;} = new List<Unit>();
 
+    bool isTryingToPlaceBuilding = false;
+
     private void Start() 
     {
         mainCamera = Camera.main;   
+        player = NetworkClient.connection.identity.GetComponent<RTSPlayer>(); 
+
         Unit.AuthorityOnUnitDespawned += AuthorityHandleUUnitDespawned;
         GameOverHandler.ClientOnGameOver += ClientHandleGameOver;
+        BuildingButton.TryingToPlaceBuilding += ClientHandleTryingToPlaceBuilding;
     }
 
     private void OnDestroy() 
     {
         Unit.AuthorityOnUnitDespawned -= AuthorityHandleUUnitDespawned;
         GameOverHandler.ClientOnGameOver -= ClientHandleGameOver;
+        BuildingButton.TryingToPlaceBuilding -= ClientHandleTryingToPlaceBuilding;
     }
 
     private void Update() 
     {
-        if(player == null)
+        if(!isTryingToPlaceBuilding)
         {
-            StartCoroutine(DelayPlayerGet());     
+            if(Mouse.current.leftButton.wasPressedThisFrame)    
+            {
+                StartSelectionArea();
+            }
+            else if(Mouse.current.leftButton.wasReleasedThisFrame)
+            {
+                ClearSelectionArea();
+            }
+            else if(Mouse.current.leftButton.isPressed)
+            {
+                UpdateSelectionArea();
+            }
         }
 
-        if(Mouse.current.leftButton.wasPressedThisFrame)    
-        {
-            StartSelectionArea();
-        }
-        else if(Mouse.current.leftButton.wasReleasedThisFrame)
-        {
-            ClearSelectionArea();
-        }
-        else if(Mouse.current.leftButton.isPressed)
-        {
-            UpdateSelectionArea();
-        }
-
-    }
-
-    IEnumerator DelayPlayerGet()
-    {
-        yield return new WaitForSeconds(0.5f);
-        player = NetworkClient.connection.identity.GetComponent<RTSPlayer>(); 
     }
 
     private void StartSelectionArea()
@@ -141,5 +139,10 @@ public class UnitSelectionHandler : MonoBehaviour
     private void ClientHandleGameOver(string winnerName)
     {
         enabled = false;
+    }
+
+    private void ClientHandleTryingToPlaceBuilding(bool state)
+    {
+        isTryingToPlaceBuilding = state;
     }
 }
